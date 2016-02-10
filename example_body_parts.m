@@ -9,23 +9,28 @@ hsv(:,1) = ((1:Ncol)-1)'/Ncol;
 hsv(:,2) = 0.5;
 hsv(:,3) = 1;
 col = hsv2rgb(hsv);
-opa = 1;
+
+patchlights = {'edgealpha',0,'facealpha',1,'AmbientStrength',0.1,'SpecularStrength',0.1};
 
 l = find_body_parts('/ cervical vertebra /');
-displ_body_parts(l,col(1,:),opa)
+displ_body_parts(l,'facecolor',col(1,:),patchlights{:})
 
 l = find_body_parts('/ thoracic vertebra /');
-displ_body_parts(l,col(2,:),opa)
+displ_body_parts(l,'facecolor',col(2,:),patchlights{:})
 
 l = find_body_parts('/ lumbar vertebra /');
-displ_body_parts(l,col(3,:),opa)
+displ_body_parts(l,'facecolor',col(3,:),patchlights{:})
 
 l = find_body_parts('sacrum');
-displ_body_parts(l,col(4,:),opa)
+displ_body_parts(l,'facecolor',col(4,:),patchlights{:})
+
+l = find_body_parts('intervertebral disk');
+displ_body_parts(l,'facecolor',0.5*[1 1 1],patchlights{:})
 
 axis equal
 axis tight
 axis off
 
 view(-90,0)
-camlight
+lighting gouraud
+camlight('headlight')

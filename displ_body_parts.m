@@ -1,4 +1,4 @@
-function displ_body_parts(id_list,colour,opacity)
+function displ_body_parts(id_list,varargin)
 
 % I don't know the best way to "localise" this. Edit as appropriate:
 
@@ -31,7 +31,7 @@ end
 %
 % Or rather, "fun"!
 
-cellfun( displ_part , id_list )
+cellfun( @displ_part , id_list )
 
 
 %% Display function
@@ -56,7 +56,7 @@ cellfun( displ_part , id_list )
     FV.vertices = OBJ.vertices;
     FV.faces    = OBJ.objects(3).data.vertices;
     
-    patch(FV,'facecolor',colour,'facealpha',opacity,'edgealpha',0)
+    patch(FV,varargin{:})
     
   end
 
