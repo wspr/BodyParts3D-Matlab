@@ -3,6 +3,8 @@
 This small collection of functions can be used to load and plot items from the BodyParts3D database.
 This database is used for the [Anatomography website](http://lifesciencedb.jp/bp3d/?lng=en). 
 
+You are currently reading the README. The nice ‘project page’ is located [here](http://wspr.github.io/BodyParts3D-Matlab/).
+
 ## Download BodyParts3D
 
 To use this code, the BodyParts3D database must first be downloaded: <https://dbarchive.biosciencedbc.jp/en/bodyparts3d/download.html>
