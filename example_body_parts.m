@@ -34,3 +34,41 @@ axis off
 view(-90,0)
 lighting gouraud
 camlight('headlight')
+
+%% Some muscles of the leg
+%
+% Chosen and coloured somewhat at random.
+
+figure(3); clf; hold on
+set(gcf,'color','white')
+
+patchlights = {'edgealpha',0,'AmbientStrength',0,'SpecularStrength',0};
+
+l = find_body_parts('bone.*(femur|patella|tibia|fibula|hip).*left');
+displ_body_parts(l,'facecolor',[0.9 0.9 0.9],patchlights{:})
+
+l = find_body_parts('muscle organ.*(adductor|quadratus femoris).*left');
+displ_body_parts(l,'facecolor',[1 0.5 0.5],'facealpha',0.5,patchlights{:})
+
+l = find_body_parts('muscle organ.*(sartorius|gracilis).*left');
+displ_body_parts(l,'facecolor',[0.5 1 0.5],'facealpha',0.5,patchlights{:})
+
+l = find_body_parts('(biceps femoris|semitend|semimem).*left');
+displ_body_parts(l,'facecolor',[0.5 0.5 1],'facealpha',0.5,patchlights{:})
+
+l = find_body_parts('(vastus).*left');
+displ_body_parts(l,'facecolor',[0.5 1 1],'facealpha',0.5,patchlights{:})
+
+axis equal
+axis tight
+axis off
+
+lighting gouraud
+for a = 0:90:270
+  view(a,0)
+  camlight headlight
+end
+for el = [-90 90]
+  view(0,el)
+  camlight headlight
+end
