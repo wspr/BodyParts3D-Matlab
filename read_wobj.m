@@ -42,7 +42,7 @@ if(verbose),disp(['Reading Object file : ' fullfilename]); end
 % Read the DI3D OBJ textfile to a cell array
 file_words = file2cellarray( fullfilename);
 % Remove empty cells, merge lines split by "\" and convert strings with values to double
-[ftype fdata]= fixlines(file_words);
+[ftype, fdata]= fixlines(file_words);
 
 % Vertex data
 vertices=[]; nv=0;
@@ -300,7 +300,7 @@ fclose(fid);
 file_lines = regexp(file_text, '\n+', 'split');
 file_words = regexp(file_lines, '\s+', 'split');
 
-function [ftype fdata]=fixlines(file_words)
+function [ftype, fdata]=fixlines(file_words)
 ftype=cell(size(file_words));
 fdata=cell(size(file_words));
 
@@ -362,7 +362,7 @@ function  objects=readmtl(filename_mtl,verbose)
 if(verbose),disp(['Reading Material file : ' filename_mtl]); end
 file_words=file2cellarray(filename_mtl);
 % Remove empty cells, merge lines split by "\" and convert strings with values to double
-[ftype fdata]= fixlines(file_words);
+[ftype, fdata]= fixlines(file_words);
 
 % Surface data
 objects.type(length(ftype))=0; 
