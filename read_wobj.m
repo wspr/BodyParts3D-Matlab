@@ -353,10 +353,12 @@ ftype(jline+1:end)=[];
 fdata(jline+1:end)=[];
 
 function b=removeemptycells(a)
-j=0; b={};
-for i=1:length(a);
-    if(~isempty(a{i})),j=j+1; b{j}=a{i}; end;
-end
+
+b = a(cellfun(@(c) ~isempty(c),a)); % wspr, was:
+  %j=0; b={};
+  %for i=1:length(a);
+  %    if(~isempty(a{i})),j=j+1; b{j}=a{i}; end;
+  %end
 
 function  objects=readmtl(filename_mtl,verbose)
 if(verbose),disp(['Reading Material file : ' filename_mtl]); end
