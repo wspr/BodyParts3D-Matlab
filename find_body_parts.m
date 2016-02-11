@@ -24,7 +24,8 @@ end
 
 parts_list = load_parts_list();
     
-search_result = find(cellfun(@(x) ~isempty(regexpi(x,s)),parts_list.desc));
+search_bool   = cellfun(@(x) ~isempty(regexpi(x,s)),parts_list.desc);
+search_result = find(search_bool);
 
 if nargout == 0
   
