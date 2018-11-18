@@ -1,7 +1,7 @@
 # BodyParts3D in Matlab
 
 This small collection of functions can be used to load and plot items from the BodyParts3D database.
-This database is used for the [Anatomography website](http://lifesciencedb.jp/bp3d/?lng=en). 
+This database is used for the [Anatomography website](http://lifesciencedb.jp/bp3d/?lng=en).
 
 You are currently reading the README. The nice ‘project page’ is located [here](http://wspr.github.io/BodyParts3D-Matlab/).
 
@@ -36,13 +36,30 @@ Basically, run the command `find_body_parts(regex)` to search for body parts in 
 
     find_body_parts('bone organ .* vertebra')
     find_body_parts('vocalis')
- 
+
 When that returns the part(s) you wish to display, add an output as so:
 
     parts = find_body_parts('/ cervical vertebra /');
     displ_body_parts(parts)
 
 Colour and opacity can be selected using additional options to `displ_body_parts()`.
+
+
+## Acknowledgement and citation
+
+If you make use of this code in your work, please cite the original BodyParts3D Project,
+as well as this repository.
+
+‘BodyParts3D: 3D structure database for anatomical concepts’
+* Mitsuhashi N, Fujieda K, Tamura T, Kawamoto S, Takagi T, Okubo K
+* Nucleic Acids Res. 2008 Oct 3
+* DOI: 10.1093/nar/gkn613
+
+‘BodyParts3D in Matlab’
+* W.S.P. Robertson
+* [![DOI](https://zenodo.org/badge/51434023.svg)](https://zenodo.org/badge/latestdoi/51434023)
+
+
 
 
 ## Copyright and licence
@@ -53,15 +70,15 @@ Distributed under the [Apache License v2](http://www.apache.org/licenses/LICENSE
 
 The following files are redistributed from other work:
 
-### `isa_element_parts.txt`
+* `isa_element_parts.txt`
 
-This file is copied verbatim from BodyParts3D. 
-The BodyParts3D database is licensed by *BodyParts3D, © The Database Center for Life Science*
-under the *CC Attribution-Share Alike 2.1 Japan* license.
+    This file is copied verbatim from BodyParts3D.
+    The BodyParts3D database is licensed by *BodyParts3D, © The Database Center for Life Science*
+    under the *CC Attribution-Share Alike 2.1 Japan* license.
 
-### `read_wobj.m`
+* `read_wobj.m`
 
-This repository also contains the `read_wobj.m` file, which has been extracted from the
-["Wavefront OBJ toolbox"](http://au.mathworks.com/matlabcentral/fileexchange/27982-wavefront-obj-toolbox).
+    This repository also contains the `read_wobj.m` file, which has been extracted from the
+    ["Wavefront OBJ toolbox"](http://au.mathworks.com/matlabcentral/fileexchange/27982-wavefront-obj-toolbox).
 
-The file has been edited to include its complete license information.
+    The file has been edited to include its complete license information.
